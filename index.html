@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
+
   <head>
+
     <title>Listening to Nodes</title>
     <style>
      div {
@@ -12,6 +14,23 @@
   </head>
 
   <body>
+
+    <script>
+      const divs = document.querySelectorAll('div');
+
+      function bubble(e) {
+        // stop! that! propagation!
+        e.stopPropagation();
+
+        console.log(this.firstChild.nodeValue.trim() + ' bubbled');
+      }
+
+      for (let i = 0; i < divs.length; i++) {
+        divs[i].addEventListener('click', bubble);
+      }
+    </script>
+
+
     <main id="main">My ID is "main"!</main>
 
     <br />
