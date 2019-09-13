@@ -37,5 +37,24 @@
         </div>
       </div>
     </div>
+
+<script type="text/javascript">
+
+const divs = document.querySelectorAll('div');
+
+function bubble(e) {
+  // stop! that! propagation!
+  e.stopPropagation();
+
+  alert(this.firstChild.nodeValue.trim() + ' bubbled');
+}
+
+for (let i = 0; i < divs.length; i++) {
+  divs[i].addEventListener('dblclick', bubble);
+}
+
+</script>
+
+
   </body>
 </html>
